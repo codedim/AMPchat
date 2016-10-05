@@ -1,0 +1,8 @@
+##
+##  Set 'AllowOverride' option to 'All' in your 'httpd.conf'
+##
+
+
+# override the index file for the main page
+Options 				-Indexes
+DirectoryIndex 			index.php
