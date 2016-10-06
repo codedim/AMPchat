@@ -25,9 +25,10 @@ the SSL (HTTPS) protocol, if you need to protect your global traffic.
 UI Specification
 ----------------
 
-The main thing about the User Interface is it must be adaptive and have to 
-adjusts to three types of user devices (smartphones, tablets and desktops) 
-at least . A list of other basic User Interface features is represented below.
+The main thing about the User Interface is it must be **adaptive** and have 
+to be adjustable for three types of user devices (smartphones, tablets and 
+desktops) at least. A list of other basic User Interface features is 
+represented below.
 
 **Login maintenance:**
 
