@@ -5,7 +5,7 @@ What is AMPchat?
 ----------------
 
 **AMPchat** is a cross-platform client-server application based on the 
-commonly used **Apache + MySQL + PHP** software bundle. Thus, the stask 
+commonly used **Apache + MySQL + PHP** software bundle. Thus, the stack 
 of **PHP**, **JavaScript**, **SQL**, **HTML** and **CSS** languages is 
 used to develop this service.
 
@@ -13,9 +13,13 @@ The web application is designed to provide to users a multi-chat service
 via web browser. Using the service, the user is able to get the following 
 main features:
 
-* sign up to the service;
-* log in to your account;
-* chat with any other users.
+* sign up to the service and log in to your account;
+* communicate with other users using varios of devices;
+* share files and documents with others, etc.
+
+The application may be useful for various kinds of open and closed groups 
+and communities, communication within companies and so on. You should use 
+the SSL (HTTPS) protocol, if you need to protect your global traffic.
 
 
 UI Specification
@@ -44,9 +48,9 @@ administrators or moderators of the chat-rooms there;
 
 **Main interface:**
 
-* The main chat interface shouls be presented in two parts: the input area 
+* The main chat interface should be presented in two parts: the input area 
 and the list of messages;
-* The input area should be on the lower side, the list of messagess - on 
+* The input area should be on the lower side, the list of messages - on 
 the top;
 * Messages should be growing from the bottom up, the new message must 
 appear below older ones;
@@ -55,7 +59,7 @@ appear below older ones;
 * If there are many messages in the chat, the user can be able to see them 
 all by scrolling them from the bottom up;
 * When the user scrolls the messages up, they must be downloaded from server 
-in parts, there is no need to download a huge list of messages at once; 
+part by part, there is no need to download a huge list of messages at once; 
 
 **Additional features:**
 
@@ -66,7 +70,8 @@ in parts, there is no need to download a huge list of messages at once;
 * The room is 'alive' as long as it has at least one online user in it;
 * The room is 'pending' during some timeout after it contains no online 
 users. But if all users closed this room, it becomes 'saved';
-* The user should be able to resume the pending room and view the saved one;
+* The user should be able to resume the pending rooms and view the saved 
+ones;
 * Each user --who was in the pending room and hasn't closed it yet-- can 
 resume the room to continue chat;
 * A user can add an other user in 'friend list', the friends must be 
