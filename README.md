@@ -1,6 +1,8 @@
 AMPchat (pre-alpha)
 ===================
 
+
+----------------
 What is AMPchat?
 ----------------
 
@@ -22,6 +24,7 @@ and communities, communication within companies and so on. You should use
 the SSL (HTTPS) protocol, if you need to protect your global traffic.
 
 
+----------------
 UI Specification
 ----------------
 
@@ -79,10 +82,31 @@ resume the room to continue chat;
 displayed above the others (in user list) and highlighted (in message list);
 
 
+------------------
 Tech Specification
 ------------------
 
+The main goal of this project is to design and develop a client-server 
+web-application with hiload ability and adaptive user interface. It should 
+be an easy-to-deploy and update software with maintaining of backwards 
+compatibility within all its versions.
 
+**Database**
+
+
+**Backend side**
+
+
+**Protocol**
+
+
+**Frontend side**
+
+
+**Testing**
+
+
+-------------
 Installation
 -------------
 
