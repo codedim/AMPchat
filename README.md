@@ -91,19 +91,29 @@ web-application with hiload ability and adaptive user interface. It should
 be an easy-to-deploy and update software with maintaining of backwards 
 compatibility within all its versions.
 
-**Database**
+####Database
 
 
-**Backend side**
+####Backend side
 
 
-**Protocol**
+####Protocol
 
 
-**Frontend side**
+####Frontend side
+
+The logged-in user interface consists of several useful areas (blocks):
+
+* Account menu - block with the **logout** button, etc.
+* User list - list of online users with their statuses.
+* Room list - list of active and pending chat-rooms.
+* Input area - block for user input.
+* Message list - selected chat-room messages.
+
+####Configuring
 
 
-**Testing**
+####Testing
 
 
 -------------
