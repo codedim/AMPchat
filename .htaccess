@@ -3,6 +3,9 @@
 ##
 
 
-# override the index file for the main page
-Options 				-Indexes
-DirectoryIndex 			index.php
+# disable directory viewing
+Options 			-Indexes
+# main page index file
+DirectoryIndex 		index.html
+# allow to treat html docs as php
+AddHandler 			application/x-httpd-php .php .html .htm

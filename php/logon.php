@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['userId']))
 {
 
-	echo 'You must to login first!';
+	echo ': You must to login first!';
 
 }
 
