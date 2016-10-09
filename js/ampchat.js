@@ -83,8 +83,8 @@ function slideSidebar() {
 		// fixing blocks styles
 		sideBlock.style.left = '0px';
 		if (chatWrapper.clientWidth > LAYOUT_PORTRAIT) {
-			sideBlock.style.position = 'relative';			// CSS CONST!
-			mainBlock.style.width = MAIN_BLOCK_WIDTH;		// CSS CONST!
+			sideBlock.style.position = 'relative';
+			mainBlock.style.width = MAIN_BLOCK_WIDTH;
 		}
 		return;
 	}

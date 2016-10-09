@@ -12,6 +12,7 @@
 ** modules, you should do not change them.
 */
 
+
 /*****************************************************/
 /*******************  MAIN BLOCKS  *******************/
 /*****************************************************/
@@ -171,35 +172,85 @@
 	}
 }
 
-/* Logon */
 
-#Logon {
-	width: 300px;
-	height: 180px;
+/*****************************************************/
+/*********  ACCOUNT: LOGIN, SINGUP, PROFILE  *********/
+/*****************************************************/
+
+#Account {
+	min-width: 300px;
+	min-height: 160px;
 	position: absolute;
 	top: 30px;
-	right: 30px;
-	background-color: #bbb;
-	opacity: 0.7;
-	border: 1px solid #888;
+	left: 0px;
+	
+	background-color: #eee;
+	border: 1px solid #ccc;
+	opacity: 0.9;
 	z-index: 30;
 }
-@media screen and (max-width: 800px) {
-	#Logon {
-		width: 340px;
-		height: 200px;
-	}
-}
 @media screen and (max-width: 480px) {
-	#Logon {
-		width: 80%;
-		height: 70%;
-		top: 15%;
-		right: 10%;
-		bottom: 15%;
-		left: 10%;
+	#Account {
+		top: 40px;
 	}
 }
+
+#Account h1 { 
+	margin: 0;
+	margin-bottom: 16px;
+	padding: 4px 0;
+	text-align: center;
+	background-color: #ccc;
+	font-size: 140%;
+}
+
+#Account p {
+	margin: 8px 30px;
+	text-align: center;
+}
+
+#Account p.footer {
+	margin: 0;
+	padding: 4px;
+	background-color: #ccc;
+}
+
+#Account .submit {
+	margin: 4px 10px;
+}
+
+#Profile p {
+	text-align: left;
+}
+
+#Profile #about {
+	width: 230px;
+}
+
+#Profile p.submit {
+	text-align: right;
+	margin: 6px 30px;
+}
+
+#Profile p.footer {
+	text-align: center;
+	padding: 6px;
+}
+
+/* Block visibility */
+
+#Login {
+	display: block;
+}
+
+#Signup {
+	display: none;
+}
+
+#Profile {
+	display: none;
+}
+
 
 /*****************************************************/
 /******************  ACCOUNT MENU  *******************/
