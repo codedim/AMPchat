@@ -1,5 +1,5 @@
 /*
-**  Main Blocks' behaviour module
+**  Main Blocks' behaviour and account control module
 */
 
 // important CSS constants
@@ -12,7 +12,7 @@ const SIDE_BLOCK_WIDTH = '20%';
 window.addEventListener('load', adjustBlocks);
 window.addEventListener('resize', adjustBlocks);
 
-// get main block objects
+// main block elements
 var html  = document.getElementsByTagName('html')[0];
 var body  = document.getElementsByTagName('body')[0];
 var chatWrapper = document.getElementById('ChatWrapper');
@@ -21,6 +21,7 @@ var sideBlock   = document.getElementById('SideBlock');
 var accountBtn  = document.getElementById('AccountBtn');
 var accMenuBtn  = document.getElementById('AccMenuBtn');
 var addMenuBtn  = document.getElementById('AddMenuBtn');
+var shadowBtn = document.getElementById('ShadowBtn');
 
 
 /*****************************  Resize Corrector  *****************************/
@@ -38,6 +39,7 @@ function adjustBlocks() {
 	// if 'chatWrapper' is a root (non build-in) block, 
 	// it is necessary to ajust style of some tags here
 	if (chatWrapper.parentNode === body) {
+		// no margins from body
 		body.style.margin = 0;
 		// set a whole chat to 100% viewport height
 		chatWrapper.style.height = '100vh';
@@ -133,5 +135,30 @@ function showSidebar() {
 
 		intervId = setInterval(slideSidebar, TIMER_INT);
 		addMenuBtn.style.display = 'none';
+	}
+}
+
+
+/*****************************  Account Control  ******************************/
+
+// account block elements
+var loginBlock = document.getElementById('Login');
+var signupBlock = document.getElementById('Signup');
+var passwordBlock = document.getElementById('Password');
+var profileBlock = document.getElementById('Profile');
+
+// shows Sign Up block
+function newAccount() {
+	if (loginBlock != null && signupBlock != null) {
+		loginBlock.style.display = 'none';
+		signupBlock.style.display = 'block';
+	}
+}
+
+// shows Retrieve Password block
+function getPassword() {
+	if (loginBlock != null && passwordBlock != null) {
+		loginBlock.style.display = 'none';
+		passwordBlock.style.display = 'block';
 	}
 }
