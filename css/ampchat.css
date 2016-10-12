@@ -1,4 +1,4 @@
-/* 
+/*****************************************************
 ** There are tree types of adaptive design here:
 **
 **  * mobile portrait	- up to 480px width, 		// CONST! //
@@ -10,7 +10,13 @@
 **
 ** Note: Values marked as CONST are used in other 
 ** modules, you should do not change them.
-*/
+**
+******************************************************/
+
+/* mobile landscape layout 'Account mode' fixing */
+body { 
+	background-color: #666; /* ShadowBtn bgr-color */
+}
 
 
 /*****************************************************/
@@ -174,24 +180,55 @@
 
 
 /*****************************************************/
-/*********  ACCOUNT: LOGIN, SINGUP, PROFILE  *********/
+/**  ACCOUNT:  LOGIN, SINGUP, GETPASSWORD, PROFILE  **/
 /*****************************************************/
 
-#Account {
-	min-width: 300px;
-	min-height: 160px;
+#ShadowBtn {
 	position: absolute;
-	top: 30px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
 	left: 0px;
-	
-	background-color: #eee;
-	border: 1px solid #ccc;
-	opacity: 0.9;
+	width: 100%;
+
+	border-style: none;
+	background-color: #666;
+	opacity: 0.96;
 	z-index: 30;
 }
+
+#Account {
+	min-width: 280px;
+	max-width: 320px;
+	min-height: 140px;
+	margin: auto;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	z-index: 40;
+	font: 11pt sans-serif;
+}
+@media screen and (max-width: 800px) {
+	#Account { 
+		font-size: 12pt; 
+	}
+}
 @media screen and (max-width: 480px) {
-	#Account {
-		top: 40px;
+	#Account { 
+		font-size: 13pt;
+	}
+}
+
+#Account input {
+	font: 11pt sans-serif;
+}
+@media screen and (max-width: 800px) {
+	#Account input { 
+		font-size: 12pt; 
+	}
+}
+@media screen and (max-width: 480px) {
+	#Account input { 
+		font-size: 13pt;
 	}
 }
 
@@ -237,14 +274,14 @@
 	padding: 6px;
 }
 
-/* Block visibility */
+/* Blocks' visibility */
+
+#Signup, #Password, #Profile {
+	display: none;
+}
 
 #Login {
 	display: block;
-}
-
-#Signup, #Profile {
-	display: none;
 }
 
 
