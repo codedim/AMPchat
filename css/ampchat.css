@@ -252,6 +252,10 @@ body {
 	background-color: #ccc;
 }
 
+#AccountBlock hr {
+	color: #ccc;
+}
+
 #AccountBlock .submit {
 	margin: 4px 10px;
 }
