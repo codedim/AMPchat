@@ -26,8 +26,10 @@ body {
 /* Wrapper block for the whole Chat */
 
 #ChatWrapper {
-	width: 100%; 
+	width: 100%;
+	min-width: 100%;
 	height: 100%;
+	min-height: 100%;
 	background-color: #aaa;
 	font: 11pt sans-serif;
 }
@@ -129,7 +131,7 @@ body {
 	}
 }
 
-/* SideBlock: AccountMenu, UserList */
+/* SideBlock: ProfileMenu, UserList */
 
 #SideBlock {
 	width: 20%;										/* CONST! */
@@ -148,16 +150,16 @@ body {
 	}
 }
 
-#AccountMenu {
+#ProfileMenu {
 	width: 100%;
 	height: 30px;
 	position: absolute;
 	overflow: hidden;
 	top: 0px;
-	background-color: #eaa;
+	background-color: #ccc;
 }
 @media screen and (max-width: 480px) {
-	#AccountMenu {
+	#ProfileMenu {
 		height: 40px;
 	}
 }
@@ -180,24 +182,22 @@ body {
 
 
 /*****************************************************/
-/**  ACCOUNT:  LOGIN, SINGUP, GETPASSWORD, PROFILE  **/
+/*  ACCOUNT BLOCK:  LOGIN, SINGUP, GETPASS, PROFILE  */
 /*****************************************************/
 
-#ShadowBtn {
+#ShadowScreen {
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-
-	border-style: none;
 	background-color: #666;
 	opacity: 0.96;
 	z-index: 30;
 }
 
-#Account {
+#AccountBlock {
 	min-width: 280px;
 	max-width: 320px;
 	min-height: 140px;
@@ -208,31 +208,31 @@ body {
 	font: 11pt sans-serif;
 }
 @media screen and (max-width: 800px) {
-	#Account { 
+	#AccountBlock { 
 		font-size: 12pt; 
 	}
 }
 @media screen and (max-width: 480px) {
-	#Account { 
+	#AccountBlock { 
 		font-size: 13pt;
 	}
 }
 
-#Account input {
+#AccountBlock input, #AccountBlock button {
 	font: 11pt sans-serif;
 }
 @media screen and (max-width: 800px) {
-	#Account input { 
+	#AccountBlock, #AccountBlock button input { 
 		font-size: 12pt; 
 	}
 }
 @media screen and (max-width: 480px) {
-	#Account input { 
+	#AccountBlock, #AccountBlock button input { 
 		font-size: 13pt;
 	}
 }
 
-#Account h1 { 
+#AccountBlock h1 { 
 	margin: 0;
 	margin-bottom: 16px;
 	padding: 4px 0;
@@ -241,27 +241,23 @@ body {
 	font-size: 140%;
 }
 
-#Account p {
+#AccountBlock p {
 	margin: 8px 30px;
 	text-align: center;
 }
 
-#Account p.footer {
+#AccountBlock p.footer {
 	margin: 0;
 	padding: 4px;
 	background-color: #ccc;
 }
 
-#Account .submit {
+#AccountBlock .submit {
 	margin: 4px 10px;
 }
 
 #Profile p {
 	text-align: left;
-}
-
-#Profile #about {
-	width: 230px;
 }
 
 #Profile p.submit {
@@ -289,7 +285,7 @@ body {
 /******************  ACCOUNT MENU  *******************/
 /*****************************************************/
 
-#AccountBtn {
+#ProfileBtn {
 	height: 100%;
 	width: 100%;
 	display: block;
@@ -298,27 +294,30 @@ body {
 	background-image: url("../img/defuser.png"); 	/* CONST! */
 	background-size: auto 100%; 
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 
-#AccountBtn span {
+#ProfileBtn span {
 	display: block;
 	margin-left: 35px;
 	margin-top: 8px;
-	color: #333;
+	color: #444;
+	cursor: pointer;
+    font-weight: bold;
 }
 @media screen and (max-width: 800px) {
-	#AccountBtn span {
+	#ProfileBtn span {
 		margin-top: 6px;
 	}
 }
 @media screen and (max-width: 480px) {
-	#AccountBtn span {
+	#ProfileBtn span {
 		margin-left: 45px;
 		margin-top: 14px;
 	}
 }
 
-#AccMenuBtn {
+#SidebarBtn {
 	height: 100%;
 	width: 30px;
 	display: none;
@@ -329,19 +328,19 @@ body {
 	background-color: inherit;
 }
 @media screen and (max-width: 800px) {
-	#AccMenuBtn {
+	#SidebarBtn {
 		display: block;
 	}
 }
 @media screen and (max-width: 480px) {
-	#AccMenuBtn {
+	#SidebarBtn {
 		display: block;
 		width: 40px;
 	}
 }
 
 /* dummy button for SideBlock slider */
-#AddMenuBtn {  
+#AddSidebarBtn {  
 	height: 30px;
 	width: 30px;
 	display: none;
@@ -353,7 +352,7 @@ body {
 	z-index: 10;
 }
 @media screen and (max-width: 480px) {
-	#AddMenuBtn {
+	#AddSidebarBtn {
 		height: 40px;
 		width: 40px;
 	}

@@ -12,16 +12,20 @@ const SIDE_BLOCK_WIDTH = '20%';
 window.addEventListener('load', adjustBlocks);
 window.addEventListener('resize', adjustBlocks);
 
-// main block elements
+// main elements
 var html  = document.getElementsByTagName('html')[0];
 var body  = document.getElementsByTagName('body')[0];
-var chatWrapper = document.getElementById('ChatWrapper');
-var mainBlock   = document.getElementById('MainBlock');
-var sideBlock   = document.getElementById('SideBlock');
-var accountBtn  = document.getElementById('AccountBtn');
-var accMenuBtn  = document.getElementById('AccMenuBtn');
-var addMenuBtn  = document.getElementById('AddMenuBtn');
-var shadowBtn = document.getElementById('ShadowBtn');
+var chatWrapper  = document.getElementById('ChatWrapper');
+// account elements
+var shadowScreen = document.getElementById('ShadowScreen');
+var accountBlock = document.getElementById('AccountBlock');
+// main blocks
+var mainBlock    = document.getElementById('MainBlock');
+var sideBlock    = document.getElementById('SideBlock');
+// sidebar elements
+var profileBtn     = document.getElementById('ProfileBtn');
+var sidebarBtn     = document.getElementById('SidebarBtn');
+var addSidebarBtn  = document.getElementById('AddSidebarBtn');
 
 
 /*****************************  Resize Corrector  *****************************/
@@ -30,8 +34,8 @@ var shadowBtn = document.getElementById('ShadowBtn');
 function delSliderStyels() {
 	mainBlock.removeAttribute('style');
 	sideBlock.removeAttribute('style');
-	accMenuBtn.removeAttribute('style');
-	addMenuBtn.removeAttribute('style');
+	sidebarBtn.removeAttribute('style');
+	addSidebarBtn.removeAttribute('style');
 }
 
 // corrects styles of some blocks after resizing
@@ -45,10 +49,19 @@ function adjustBlocks() {
 		chatWrapper.style.height = '100vh';
 	}
 
+	// vertical ajustments of Accoun block
+	if (chatWrapper.clientHeight > accountBlock.clientHeight) {
+		var blockTop = Math.round((chatWrapper.clientHeight - 
+			accountBlock.clientHeight) / 2);
+		accountBlock.style.marginTop = blockTop + 'px';
+	} else {
+		accountBlock.style.marginTop = '0px';
+	}
+
 	// once a sideBlock animation (see bellow) has been 
 	// appled, some DOM elements will include inline 
 	// styles. these most priority styles will override 
-	// the stylesheet rules. so, we should repair them.
+	// the stylesheet rules. we should repair them back.
 	if (chatWrapper.clientWidth > LAYOUT_LANDSCAPE) {
 		delSliderStyels()
 	} else if (sideBlock.style.left[0] == '-') {
@@ -72,7 +85,7 @@ const SHIFT_INT = 10;	// shift interval
 const TIMER_INT = 20;	// timer intervar
 
 // slides the sideBlock to left or right direction
-function slideSidebar() {
+function slideBlock() {
 	(shiftTo == 'left') ? blockPos -= SHIFT_INT : blockPos += SHIFT_INT;
 
 
@@ -99,42 +112,42 @@ var leftArrowUrl = '';
 var rightArrowUrl = '';
 
 // shows or hides the sideBlock
-function showSidebar() {
+function slideSidebar() {
 	// if JS inline styles have not been applied yet
-	if (accMenuBtn.style.backgroundImage == '') {
+	if (sidebarBtn.style.backgroundImage == '') {
 		var blockStyles = window.getComputedStyle(sideBlock, null);
 		sideBlock.style.left = blockStyles.getPropertyValue('left');
 
-		blockStyles = window.getComputedStyle(accMenuBtn, null);
+		blockStyles = window.getComputedStyle(sidebarBtn, null);
 		leftArrowUrl = blockStyles.getPropertyValue('background-image');
 
-		blockStyles = window.getComputedStyle(addMenuBtn, null);
+		blockStyles = window.getComputedStyle(addSidebarBtn, null);
 		rightArrowUrl = blockStyles.getPropertyValue('background-image');
 
-		accMenuBtn.style.backgroundImage = leftArrowUrl;
+		sidebarBtn.style.backgroundImage = leftArrowUrl;
 	}
 	clearInterval(intervId); // just in case;
 
 	// choose to show or hide sideBlock, left or right sliding
-	if (accMenuBtn.style.backgroundImage == leftArrowUrl) {
+	if (sidebarBtn.style.backgroundImage == leftArrowUrl) {
 	/// shift to the left
-		accMenuBtn.style.backgroundImage = rightArrowUrl;
+		sidebarBtn.style.backgroundImage = rightArrowUrl;
 		blockPos = 0;
 		shiftTo = 'left';
 
-		intervId = setInterval(slideSidebar, TIMER_INT);
-		addMenuBtn.style.display = 'block';
+		intervId = setInterval(slideBlock, TIMER_INT);
+		addSidebarBtn.style.display = 'block';
 
 		sideBlock.style.position = 'absolute';
 		mainBlock.style.width = '100%';
 	} else {
 	/// shift to the right
-		accMenuBtn.style.backgroundImage = leftArrowUrl;
+		sidebarBtn.style.backgroundImage = leftArrowUrl;
 		blockPos = -sideBlock.clientWidth;
 		shiftTo = 'right';
 
-		intervId = setInterval(slideSidebar, TIMER_INT);
-		addMenuBtn.style.display = 'none';
+		intervId = setInterval(slideBlock, TIMER_INT);
+		addSidebarBtn.style.display = 'none';
 	}
 }
 
@@ -161,4 +174,35 @@ function getPassword() {
 		loginBlock.style.display = 'none';
 		passwordBlock.style.display = 'block';
 	}
+}
+
+function showProfile() {
+	if (profileBlock != null) {
+		profileBlock.style.display = 'block';
+		shadowScreen.style.display = 'block';
+		adjustBlocks();
+	}
+}
+
+function closeProfile() {
+	shadowScreen.style.display = 'none';
+	profileBlock.style.display = 'none';
+}
+
+function logOut() {
+	var url = window.location.href;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+		userAction: 'logout'
+	}));
+}
+
+// login form validation
+function validateLogin() {
+	// fake login - fix it
+	shadowScreen.style.display = 'none';
+	loginBlock.style.display = 'none';
+	return false;  
 }

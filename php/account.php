@@ -1,7 +1,7 @@
 
 <div id="Login">
 	<h1>Log In</h1>
-	<form method="post">
+	<form method="post" onsubmit="return validateLogin()">
 		<p><input type="text" name="user" size="22" maxlength="20" 
 			placeholder="Nickname">
 		<p><input type="password" name="passw" size="22" maxlength="20" 
@@ -25,8 +25,7 @@
 			placeholder="Nickname">
 		<p><input type="password" name="passw" size="22" maxlength="20" 
 			placeholder="Password">
-		<p><input type="checkbox" name="remember" checked> remember me
-		<input type="submit" class="submit" value="Sign up">
+		<p><input type="submit" class="submit" value="Sign up">
 	</form>
 	<p class="footer"> </p>
 </div>
@@ -47,19 +46,19 @@
 	<h1>Your Profile</h1>
 	<form enctype="multipart/form-data" method="post">
 		<p>Say a few words about yourself:
-		<p><input type="text" name="about" id="about" size="22" maxlength="60" 
+		<p><input type="text" name="about" id="about" size="30" maxlength="60" 
 		  placeholder="Yeah, I'm Chuck Norris!">
-		<p><input type="radio" name="gender" value="male"> male
+		<p><input type="radio" name="gender" value="male" checked> male
 		<input type="radio" name="gender" value="female"> female
-		<input type="radio" name="gender" value="creature" checked> no matter
+		<hr>
 		<p>Please, upload your avatar:
 		<input type="hidden" name="MAX_FILE_SIZE" value="30000">
 		<p><input name="avatar" type="file"><br>
 		<sub>JPEG, PNG, GIF (30K max)</sub>
-		<p class="submit"><input type="submit" value="Save">
+		<hr>
+		<p class="submit"><input type="submit" value="Save"> <button type="button" 
+			onclick="closeProfile()" touchstart="closeProfile()">Close</button>
 	</form>
-	<form method="post">
-	<input type="hidden" name="logout" value="logout">
-	<p class="footer"><input type="submit" value="Log out">
-	</form>
+	<p class="footer"><a href="javascript:void(0)" onclick="logOut()" 
+		touchstart="logOut()">Log out</a>
 </div>

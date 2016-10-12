@@ -6,30 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, 
     maximum-scale=1.0, user-scalable=no">
   <!--[if lt IE 9]> <script 
-    src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
-  </script> <![endif]-->
+      src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+    </script> 
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
   <link rel="stylesheet" type="text/css" href="css/ampchat.css">
 </head><body>
   <!-- whole chat wrapper -->
   <div id="ChatWrapper">
     <!-- user block -->
     <div id="SideBlock">
-      <div id="AccountMenu">
-        <div id="AccountBtn" onclick="showAccount()"><span>Account</span></div>
-        <div id="AccMenuBtn" onclick="showSidebar()"> </div>
+      <div id="ProfileMenu">
+        <div id="ProfileBtn" onclick="showProfile()" touchstart="showProfile()">
+          <span onclick="showProfile()" touchstart="showProfile()">User</span></div>
+        <div id="SidebarBtn" onclick="slideSidebar()"  touchstart="slideSidebar()"> </div>
       </div>
       <div id="UserList">UserList<?php include 'php/userlist.php'; ?></div>
     </div>
     <!-- main block -->
     <div id="MainBlock">
-      <div id="AddMenuBtn" onclick="showSidebar()"> </div>
+      <div id="AddSidebarBtn" onclick="slideSidebar()" touchstart="slideSidebar()"> </div>
       <div id="MessageList">MessageList<?php include 'php/messagelist.php'; ?></div>
       <div id="InputArea">InputArea<?php include 'php/inputarea.php'; ?></div>
       <div id="RoomList">RoomList<?php include 'php/roomlist.php'; ?></div>
     </div>
-    <button id="ShadowBtn">
-	  <div id="Account"><?php require 'php/account.php'; ?></div>
-    </button>
+    <div id="ShadowScreen">
+	  <div id="AccountBlock"><?php require 'php/account.php'; ?></div>
+    </div>
   </div> <!-- end of chat wrapper -->
   <script src="js/ampchat.js"></script>
 </body></html>
