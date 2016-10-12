@@ -243,11 +243,7 @@
 	display: block;
 }
 
-#Signup {
-	display: none;
-}
-
-#Profile {
+#Signup, #Profile {
 	display: none;
 }
 
