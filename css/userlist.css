@@ -1,25 +1,21 @@
 
-#CurrentRoom {
-	background-color: #cfc;
-}
-
-#GeneralRoom {
-	background-color: #fcc;
-}
-
 .UserList {
 	width: 100%;
 	height: auto;
-	margin-top: 3px;
+	margin-top: 2px;
 }
 
 .UserBlock {
 	width: 100%;
 	height: 30px;
+	padding: 2px 0px;
 	font-size: 10pt;
 	color: #444;
 	white-space: nowrap;
 	overflow: hidden;
+	position: relative;
+	background-color: #eee;
+	border-bottom: solid 1px #bbb;
 }
 @media screen and (max-width: 480px) {
 	.UserBlock {
@@ -29,41 +25,50 @@
 }
 
 .Status, .StatusOnline, .StatusAway, .StatusOffline {
-	width: 8px;
-	height: 100%;
+	width: 6px;
+	height: 30px;
 	display: block;
 	float: left;
+}
+@media screen and (max-width: 480px) {
+	.Status, .StatusOnline, .StatusAway, .StatusOffline {
+		height: 40px;
+	}
 }
 
 .Status	{ 
 	background-color: gray;
+	background: linear-gradient(to right, gray, #eee);
 }
 
 .StatusOnline { 
 	background-color: green;
+	background: linear-gradient(to right, green, #eee);
 }
 
 .StatusAway {
 	background-color: brown;
+	background: linear-gradient(to right, brown, #eee);
 }
-
 
 .StatusOffline {
-	background-color: red;
+	background-color: gray;
+	background: linear-gradient(to right, gray, #eee);
 }
 
-.UserAvatar, .UserAction {
+.UserAvatar, .Retouch, .UserAction {
 	width: 30px;
-	height: 100%;
+	height: 30px;
 }
 @media screen and (max-width: 480px) {
-	.UserAvatar, .UserAction {
+	.UserAvatar, .Retouch, .UserAction {
 		width: 40px;
+		height: 40px;
 	}
 }
 
 .UserAvatar {
-	background-image: url("../img/defuser.png"); 	/* CONST! */
+	background-image: url("../img/defuser.svg"); 	/* CONST! */
 	background-size: auto 100%; 
 	background-repeat: no-repeat;
 	display: block;
@@ -71,7 +76,12 @@
 }
 
 .UserName, .UserStatus {
-	padding-left: 4px;
+	padding-left: 3px;
+}
+@media screen and (max-width: 480px) {
+	.UserName, .UserStatus {
+		padding-left: 4px;
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -91,11 +101,43 @@
 	}
 }
 
-.UserAction {
+.Retouch, .UserAction {
 	display: block;
-	float: right;
+	position: absolute;
+	top: 2px;
+	right: 0px;
 }
-	
+
+.Retouch {
+	background: linear-gradient(to left, #bbb, #eee);
+}
+
+.UserAction {
+	background-image: url("../img/adduser.svg"); 	/* CONST! */
+	background-size: auto 100%; 
+	background-repeat: no-repeat;
+}
+
+#ScrollUserlist { 
+	width: 30px;
+	height: 30px;
+  	left: 6px; 
+	bottom: 2px; 
+	padding: 0; 
+	background-image: url("../img/uparrow.svg"); 	/* CONST! */
+	background-size: auto 100%; 
+	background-repeat: no-repeat;
+	position: fixed; 
+	opacity: 0.5; 
+	cursor: pointer;
+	display: none;
+}	
+@media screen and (max-width: 480px) {
+	#ScrollUserlist { 
+		width: 40px;
+		height: 40px;
+	}
+}
 
 /*
 <div id="GeneralRoom" class="UserList">

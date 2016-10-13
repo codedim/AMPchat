@@ -26,6 +26,8 @@ var sideBlock    = document.getElementById('SideBlock');
 var profileBtn     = document.getElementById('ProfileBtn');
 var sidebarBtn     = document.getElementById('SidebarBtn');
 var addSidebarBtn  = document.getElementById('AddSidebarBtn');
+// userlist scroll button
+var scrollUserlist = document.getElementById('ScrollUserlist');
 
 
 /*****************************  Resize Corrector  *****************************/
@@ -92,6 +94,7 @@ function slideBlock() {
 	if (shiftTo == 'left' && Math.abs(blockPos) >= sideBlock.clientWidth) {
 	/// left shifting is done
 		clearInterval(intervId);
+		scrollUserlist.style.display = 'none';
 	} else if (shiftTo == 'right' && blockPos >= 0) {
 	/// right shifting is done
 		clearInterval(intervId);

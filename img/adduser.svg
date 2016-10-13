@@ -1,0 +1,44 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   width="40"
+   height="40"
+   viewBox="0 0 40 40.000001"
+   id="svg2"
+   version="1.1"
+>
+  <g
+     id="layer1"
+     transform="translate(0,-1012.3622)" />
+  <g
+     id="layer2"
+  >
+    <circle
+       transform="scale(-1,1)"
+       style="fill:#444444"
+       id="path3409"
+       cx="-20.073593"
+       cy="19.869265"
+       r="17.930206" />
+    <g
+       id="g3434"
+       transform="matrix(0.8576779,0,0,0.835206,3.1252946,4.5578888)">
+      <rect
+         ry="0"
+         y="14.917721"
+         x="5.6568542"
+         height="7.6847854"
+         width="28.497738"
+         id="rect3428"
+         style="fill:#ffffff" />
+      <rect
+         transform="matrix(0,1,-1,0,0,0)"
+         style="fill:#ffffff"
+         id="rect3430"
+         width="28.497738"
+         height="7.6847854"
+         x="4.5112448"
+         y="-23.748116"
+         ry="0" />
+    </g>
+  </g>
+</svg>
