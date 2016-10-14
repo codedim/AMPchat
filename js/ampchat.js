@@ -195,7 +195,7 @@ function closeProfile() {
 function logOut() {
 	var url = window.location.href;
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open('POST', url, true);
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.send(JSON.stringify({
 		userAction: 'logout'

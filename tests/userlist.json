@@ -1,0 +1,52 @@
+[
+ { 
+	"name": "Piter", 
+	"icon": "tests/img/rocket.png", 
+	"userStatus": "click clack",
+	"status": "on", 
+	"friend": false,
+	"banned": false,
+	"invited": false,
+	"joined": false
+ },
+ { 
+	"name": "John", 
+	"icon": null, 
+	"userStatus": "",
+	"status": "on", 
+	"friend": false, 
+	"banned": false,
+	"invited": false,
+	"joined": false
+ },
+ { 
+	"name": "Jenny", 
+	"icon": "tests/img/meme.png", 
+	"userStatus": "Kitty girl",
+	"status": "afk", 
+	"friend": true,
+	"banned": false,
+	"invited": true,
+	"joined": false
+ },
+ { 
+	"name": "Celvin", 
+	"icon": "tests/img/guy.png", 
+	"userStatus": "I\"m a dude.",
+	"status": "off", 
+	"friend": true,
+	"banned": false,
+	"invited": false,
+	"joined": true
+ },
+ { 
+	"name": "Anonymous", 
+	"icon": "tests/img/pinguin.png", 
+	"userStatus": "You should not see me!",
+	"status": "on", 
+	"friend": false,
+	"banned": true,
+	"invited": false,
+	"joined": false
+ }
+]

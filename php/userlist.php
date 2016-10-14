@@ -2,10 +2,10 @@
 <div id="CurrentRoom" class="UserList">
 </div> <!-- current room -->
 
-<div id="GeneralRoom" class="UserList">
+<div id="PublicRoom" class="UserList">
 	<div class="UserBlock">
 		<div class="StatusAway"> </div>
-		<div class="UserAvatar"> </div>
+		<div class="UserIcon"> </div>
 			<span class="UserName">UserName</span><br>
 			<span class="UserStatus">Some words about user</span>
 		<div class="Retouch"> </div>
@@ -17,7 +17,7 @@
 
 <script>
 var i;
-var list = document.getElementById('GeneralRoom');
+var list = document.getElementById('PublicRoom');
 for(i = 0; i < 6; ++i)
 	list.innerHTML += list.innerHTML;
 </script>

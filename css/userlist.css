@@ -56,18 +56,18 @@
 	background: linear-gradient(to right, gray, #eee);
 }
 
-.UserAvatar, .Retouch, .UserAction {
+.UserIcon, .Retouch, .UserAction {
 	width: 30px;
 	height: 30px;
 }
 @media screen and (max-width: 480px) {
-	.UserAvatar, .Retouch, .UserAction {
+	.UserIcon, .Retouch, .UserAction {
 		width: 40px;
 		height: 40px;
 	}
 }
 
-.UserAvatar {
+.UserIcon {
 	background-image: url("../img/defuser.svg"); 	/* CONST! */
 	background-size: auto 100%; 
 	background-repeat: no-repeat;
@@ -88,6 +88,10 @@
 	.UserName {
 		vertical-align: -4px;
 	}
+}
+
+.Friend {
+	font-weight: bold;
 }
 
 .UserStatus { 
@@ -113,9 +117,21 @@
 }
 
 .UserAction {
-	background-image: url("../img/adduser.svg"); 	/* CONST! */
+	background-image: url("../img/invite.svg"); 	/* CONST! */
 	background-size: auto 100%; 
 	background-repeat: no-repeat;
+}
+
+.Banned {
+	background-image: url("../img/banned.svg"); 	/* CONST! */
+}
+
+.Invited {
+	background-image: url("../img/invited.svg"); 	/* CONST! */
+}
+
+.Joined {
+	background-image: url("../img/joined.svg"); 	/* CONST! */
 }
 
 #ScrollUserlist { 
@@ -143,7 +159,7 @@
 <div id="GeneralRoom" class="UserList">
 	<div class="UserBlock">
 		<div class="Status"> </div>
-		<div class="UserAvatar"> </div>
+		<div class="UserIcon"> </div>
 			<span class="UserName">UserName</span><br>
 			<span class="UserStatus">Some words about user</span>
 		<div class="UserAction">. </div>
