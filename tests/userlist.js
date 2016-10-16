@@ -28,13 +28,23 @@ if (userList != null) {
 	xhr.send(null);
 }
 
-// sorts users in list by name
+// sorts users in list
 function sortUsers(users) {
+	// sort by name
 	users.sort(function(a, b) {
 		if (a.name > b.name) return 1;
 		if (a.name < b.name) return -1;
 		return 0;
 	});
+	// sort by friend
+	var tmpObj;
+	for (i = 1; i < users.length; ++i) {
+		while (users[i].friend && !users[i - 1].friend) {
+			tmpObj = users[i - 1];
+			users[i - 1] = users[i];
+			users[i] = tmpObj;
+		}
+	}
 }
 
 function addUserToList(user) {

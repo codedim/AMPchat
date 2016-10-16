@@ -1,65 +1,39 @@
-/// scroll up button
+// scroll-to-top button controller
 window.onload = function() { 
+	const ANIMATION_MAGIC = 20;
 
-	var scrollUserlist = document.getElementById('ScrollUserlist'); 
+	var scrollListBtn = document.getElementById('ScrollUserListBtn');
 	var userBlock = document.getElementById('UserList'); 
 
-	scrollUserlist.onmouseover = function() { 
-		scrollUserlist.style.opacity = 0.8;
-		scrollUserlist.style.filter = 'alpha(opacity=90)';
-	};
-
-	scrollUserlist.onmouseout = function() {  
-		scrollUserlist.style.opacity = 0.5;
-		scrollUserlist.style.filter = 'alpha(opacity=50)';
-	};
-
-	scrollUserlist.onclick = function() { 
-		smoothScrollTo(0, 1000); // scroll it to top in 1s
-	};
-
-	scrollUserlist.touchstart = function() { 
-		smoothScrollTo(0, 1000); // scroll it to top in 1s
-	};
-
-	// show/hide button
+	// show/hide scroll button
 	userBlock.onscroll = function () { 
 		if (userBlock.scrollTop > 20) {
-			scrollUserlist.style.display = 'block';
+			scrollListBtn.style.display = 'block';
 		} else {
-			scrollUserlist.style.display = 'none';
+			scrollListBtn.style.display = 'none';
 		}
 	};
+
+	scrollListBtn.onclick    = function() { 
+		scrollElemToTop(userBlock);
+	}
+	scrollListBtn.touchstart = function() {
+		scrollElemToTop(userBlock);
+	}
 	
 	// scroll function
-	smoothScrollTo = (function () {
-		var timer, start, factor;
-  
-		return function (target, duration) {
-			var offset = userBlock.scrollTop,
-				delta  = target - userBlock.scrollTop; // Y-offset difference
-			duration = duration || 1000;               // default 1 sec animation
-			start = Date.now();                        // get start time
-			factor = 0;
-    
-			if( timer ) {
-				clearInterval(timer); // stop any running animations
+	function scrollElemToTop(elem) {
+		var timer, delta = elem.scrollTop / ANIMATION_MAGIC;
+
+		function scrollStep() {
+			elem.scrollTop -= delta;
+		
+			if (elem.scrollTop <= 0) {
+				clearInterval(timer);
+				elem.scrollTop = 0;
 			}
-    
-			function step() {
-				var y;
-				factor = (Date.now() - start) / duration; // get interpolation factor
-				if( factor >= 1 ) {
-					clearInterval(timer); // stop animation
-					factor = 1;           // clip to max 1.0
-				} 
-				y = factor * delta + offset;
-				userBlock.scrollTop += y - userBlock.scrollTop;
-			}
-    
-			timer = setInterval(step, 20);
-			return timer;
-		};
-	}());
+		}
+		timer = setInterval(scrollStep, ANIMATION_MAGIC);
+	}
 
 };

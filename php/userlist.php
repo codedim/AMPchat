@@ -13,7 +13,7 @@
 	</div>
 </div> <!-- general room -->
 
-<div id="ScrollUserlist"> </div>
+<div id="ScrollUserListBtn"> </div>
 
 <script>
 var i;

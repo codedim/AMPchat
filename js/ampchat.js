@@ -5,8 +5,8 @@
 // important CSS constants
 const LAYOUT_PORTRAIT  = 480; 	// portrait to landscape layout threshold
 const LAYOUT_LANDSCAPE = 800; 	// landscape to desktop layout threshold
-const MAIN_BLOCK_WIDTH = '80%';
-const SIDE_BLOCK_WIDTH = '20%';
+const MAIN_BLOCK_WIDTH = '75%';
+const SIDE_BLOCK_WIDTH = '25%';
 
 // add event listeners
 window.addEventListener('load', adjustBlocks);
@@ -94,7 +94,7 @@ function slideBlock() {
 	if (shiftTo == 'left' && Math.abs(blockPos) >= sideBlock.clientWidth) {
 	/// left shifting is done
 		clearInterval(intervId);
-		scrollUserlist.style.display = 'none';
+		ScrollUserListBtn.style.display = 'none';
 	} else if (shiftTo == 'right' && blockPos >= 0) {
 	/// right shifting is done
 		clearInterval(intervId);

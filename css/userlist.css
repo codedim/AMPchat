@@ -134,7 +134,7 @@
 	background-image: url("../img/joined.svg"); 	/* CONST! */
 }
 
-#ScrollUserlist { 
+#ScrollUserListBtn { 
 	width: 30px;
 	height: 30px;
   	left: 6px; 
@@ -149,10 +149,13 @@
 	display: none;
 }	
 @media screen and (max-width: 480px) {
-	#ScrollUserlist { 
+	#ScrollUserListBtn { 
 		width: 40px;
 		height: 40px;
 	}
+}
+#ScrollUserListBtn:hover {
+	opacity: 0.8;
 }
 
 /*

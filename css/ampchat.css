@@ -56,7 +56,7 @@ body {
 /* MainBlock: MessageList, InputArea, RoomList */
 
 #MainBlock {
-	width: 80%;										/* CONST! */
+	width: 75%;										/* CONST! */
 	height: 100%;
 	position: relative;
 	float: right;
@@ -134,7 +134,7 @@ body {
 /* SideBlock: ProfileMenu, UserList */
 
 #SideBlock {
-	width: 20%;										/* CONST! */
+	width: 25%;										/* CONST! */
 	height: 100%;
 	position: relative;								/* CONST! */
 	overflow: hidden;
@@ -144,7 +144,7 @@ body {
 }
 @media screen and (max-width: 480px) {
 	#SideBlock {
-		width: 46%;
+		width: 56%;
 		position: absolute;							/* CONST! */
 		opacity: 0.9;
 	}
