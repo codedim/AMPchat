@@ -1,4 +1,114 @@
 
+/*****************************************************/
+/******************  PROFILE MENU  *******************/
+/*****************************************************/
+
+#ProfileBtn {
+	height: 30px;
+	width: 100%;
+	display: block;
+	float: left;
+	overflow: hidden;
+	padding: 2px 0px;
+	background-image: url("../img/defuser.svg"); 	/* CONST! */
+	background-size: auto 100%; 
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 20;
+	background-color: #ddd;
+}
+
+#ProfileBtn span {
+	margin-left: 33px;
+	color: #444;
+	cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+	#ProfileBtn span {
+		margin-left: 44px;
+	}
+}
+#ProfileBtn .UserName {
+	font-weight: bold;
+}
+
+
+#ProfileMenu .Retouch {
+	width: 33px;
+	height: 30px;
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: linear-gradient(to left, #bbb, #ddd);
+	display: none;
+}
+@media screen and (max-width: 800px) {
+	#ProfileMenu .Retouch {
+		display: block;
+	}
+}
+@media screen and (max-width: 480px) {
+	#ProfileMenu .Retouch {
+		width: 44px;
+		height: 40px;
+		display: block;
+	}
+}
+
+#SidebarBtn {
+	height: 30px;
+	width: 30px;
+	display: none;
+	position: absolute;
+	right: 0px;
+	background-image: url("../img/leftarrow.svg"); 	/* CONST! */
+	background-size: 100% auto;
+	background-color: inherit;
+	opacity: 0.5;
+}
+@media screen and (max-width: 800px) {
+	#SidebarBtn {
+		display: block;
+	}
+}
+@media screen and (max-width: 480px) {
+	#SidebarBtn {
+		display: block;
+		height: 40px;
+		width: 40px;
+	}
+}
+
+/* dummy button for SideBlock slider */
+#AddSidebarBtn {  
+	height: 30px;
+	width: 30px;
+	display: none;
+	position: absolute;
+	left: 0px;
+	background-image: url("../img/rightarrow.svg");	/* CONST! */
+	background-size: 100% auto;
+	opacity: 0.5;
+	z-index: 10;
+}
+@media screen and (max-width: 480px) {
+	#AddSidebarBtn {
+		height: 40px;
+		width: 40px;
+	}
+}
+
+#SidebarBtn:hover, #AddSidebarBtn:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+
+/*****************************************************/
+/*******************  USER LISTS  ********************/
+/*****************************************************/
+
 .UserList {
 	width: 100%;
 	height: auto;
@@ -145,7 +255,6 @@
 	background-repeat: no-repeat;
 	position: fixed; 
 	opacity: 0.5; 
-	cursor: pointer;
 	display: none;
 }	
 @media screen and (max-width: 480px) {
@@ -156,6 +265,7 @@
 }
 #ScrollUserListBtn:hover {
 	opacity: 0.8;
+	cursor: pointer;	
 }
 
 /*
@@ -165,6 +275,7 @@
 		<div class="UserIcon"> </div>
 			<span class="UserName">UserName</span><br>
 			<span class="UserStatus">Some words about user</span>
+		<div class="Retouch"> </div>
 		<div class="UserAction">. </div>
 	</div>
 

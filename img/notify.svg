@@ -2,7 +2,7 @@
    xmlns="http://www.w3.org/2000/svg"
    width="40px"
    height="40px"
-   viewBox="0 0 39.999999 39.999999"
+   viewBox="0 0 40 40"
    id="svg2"
    version="1.1"
 >
@@ -10,7 +10,7 @@
      id="layer1"
      transform="translate(0,-1012.3622)">
     <circle
-       style="fill:#cccccc;stroke:#999999;stroke-opacity:1"
+       style="fill:#999999;stroke:#ffffff;stroke-width:2.2;stroke-opacity:1"
        id="path3338"
        cx="20.067612"
        cy="1032.4"

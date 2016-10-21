@@ -19,7 +19,11 @@
     <div id="SideBlock">
       <div id="ProfileMenu">
         <div id="ProfileBtn" onclick="showProfile()" touchstart="showProfile()">
-          <span onclick="showProfile()" touchstart="showProfile()">User</span></div>
+          <span class="UserName" onclick="showProfile()" 
+            touchstart="showProfile()">User</span><br>
+          <span class="UserStatus">gasdfgasgfgasdfgasgfgasdfgasgfgasdfgasgf</span>
+        </div>
+        <div class="Retouch"> </div>
         <div id="SidebarBtn" onclick="slideSidebar()"  touchstart="slideSidebar()"> </div>
       </div>
       <div id="UserList">UserList<?php include 'php/userlist.php'; ?></div>
@@ -34,6 +38,8 @@
     <div id="ShadowScreen">
 	  <div id="AccountBlock"><?php require 'php/account.php'; ?></div>
     </div>
+    <div id="NotifyBtn"> </div>
+    <div id="NotificationArea"> </div>
   </div> <!-- end of chat wrapper -->
   <script src="js/ampchat.js"></script>
   <script src="js/scrollup.js"></script>

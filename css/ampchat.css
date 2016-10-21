@@ -140,27 +140,28 @@ body {
 	overflow: hidden;
 	float: left;	
 	background-color: #99f;
+	font-size: 10pt;
 	z-index: 20;
 }
 @media screen and (max-width: 480px) {
 	#SideBlock {
 		width: 56%;
 		position: absolute;							/* CONST! */
+		font-size: 11pt;
 		opacity: 0.9;
 	}
 }
 
 #ProfileMenu {
 	width: 100%;
-	height: 30px;
+	height: 34px;
 	position: absolute;
 	overflow: hidden;
 	top: 0px;
-	background-color: #ccc;
 }
 @media screen and (max-width: 480px) {
 	#ProfileMenu {
-		height: 40px;
+		height: 44px;
 	}
 }
 
@@ -286,82 +287,30 @@ body {
 
 
 /*****************************************************/
-/******************  ACCOUNT MENU  *******************/
+/******************  NOTIFICATIONS  ******************/
 /*****************************************************/
 
-#ProfileBtn {
-	height: 100%;
-	width: 100%;
-	display: block;
-	float: left;
-	overflow: hidden;
-	background-image: url("../img/defuser.svg"); 	/* CONST! */
+#NotifyBtn {
+	width: 30px;
+	height: 30px;
+	top: 0px;
+	right: 0px;
+	position: fixed;
+	background-image: url("../img/notify.svg"); 	/* CONST! */
 	background-size: auto 100%; 
 	background-repeat: no-repeat;
-	cursor: pointer;
-}
-
-#ProfileBtn span {
-	display: block;
-	margin-left: 35px;
-	margin-top: 8px;
-	color: #444;
-	cursor: pointer;
-    font-weight: bold;
-}
-@media screen and (max-width: 800px) {
-	#ProfileBtn span {
-		margin-top: 6px;
-	}
+	opacity: 0.5;
 }
 @media screen and (max-width: 480px) {
-	#ProfileBtn span {
-		margin-left: 45px;
-		margin-top: 14px;
-	}
-}
-
-#SidebarBtn {
-	height: 100%;
-	width: 30px;
-	display: none;
-	position: absolute;
-	right: 0px;
-	background-image: url("../img/leftarrow.svg"); 	/* CONST! */
-	background-size: 100% auto;
-	background-color: inherit;
-}
-@media screen and (max-width: 800px) {
-	#SidebarBtn {
-		display: block;
-	}
-}
-@media screen and (max-width: 480px) {
-	#SidebarBtn {
-		display: block;
+	#NotifyBtn {
 		width: 40px;
-	}
-}
-
-/* dummy button for SideBlock slider */
-#AddSidebarBtn {  
-	height: 30px;
-	width: 30px;
-	display: none;
-	position: absolute;
-	left: 0px;
-	background-image: url("../img/rightarrow.svg");	/* CONST! */
-	background-size: 100% auto;
-	opacity: 0.6;
-	z-index: 10;
-}
-@media screen and (max-width: 480px) {
-	#AddSidebarBtn {
 		height: 40px;
-		width: 40px;
 	}
 }
-
+#NotifyBtn:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
 
 
 
